@@ -11,6 +11,9 @@ gem 'pg'
 gem 'carrierwave'
 gem 'fog'
 
+# To help with css precompile on heroku
+gem 'rails_12factor'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -32,6 +35,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Video player
 gem 'jw_player_helper'
 
 group :doc do
