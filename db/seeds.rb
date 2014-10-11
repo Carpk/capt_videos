@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Video.create(name: 'matrix_reloaded', video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/clubbed+to+death+-+Matrix+soundtrack.mp4')
