@@ -32,10 +32,11 @@ ActiveRecord::Schema.define(version: 20141006020919) do
   end
 
   create_table "videos", force: true do |t|
-    t.string   "name"
-    t.string   "video_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    # t.reference "user_id"
+    t.string    "name"
+    t.string    "video_url"
+    t.datetime  "created_at"
+    t.datetime  "updated_at"
   end
 
 end

@@ -4,4 +4,4 @@ Youtube clone that uploads content to AWS S3, and plays video using JW Player.
 
 ## Getting Started
 
-This project is currently a work in progress, please come back later.
+While this site is currently a work in progress, it has been deployed to [heroku](http://captinvideos.herokuapp.com/). But please come back later to view the changes.
