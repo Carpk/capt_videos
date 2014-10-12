@@ -11,37 +11,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012160516) do
+ActiveRecord::Schema.define(version: 20141012171832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admins", force: true do |t|
+    t.integer  "user_id_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "comments", force: true do |t|
+    t.integer  "user_id_id"
+    t.integer  "video_id_id"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "messages", force: true do |t|
+    t.integer  "user_id_id"
+    t.text     "messages"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notes", force: true do |t|
+    t.integer  "user_id_id"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ratings", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tags", force: true do |t|
+    t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.boolean  "show_message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "videos", force: true do |t|
+    t.integer  "user_id_id"
+    t.integer  "tag_id_id"
+    t.string   "title"
+    t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,8 +1,9 @@
 class CreateMessages < ActiveRecord::Migration
   def change
     create_table :messages do |t|
-      t.reference :user_id
-      t.text      :messages
+      t.references :sender
+      t.references :recipient
+      t.text       :messages
 
       t.timestamps
     end
