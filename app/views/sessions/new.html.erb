@@ -1,7 +1,7 @@
 this page will log you in
 <div>
   <%= form_for :session, url: sessions_path do |f| %>
-  <%= f.text_field :name %>
+  <%= f.text_field :username %>
   <%= f.text_field :password %>
   <%= f.submit "Log in" %>
   <% end %>

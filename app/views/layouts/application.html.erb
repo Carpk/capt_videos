@@ -9,8 +9,14 @@
 </head>
 <body class="body">
 <h1>Welcome to Capt'in Videos</h1>
-<%= link_to "Log In", new_session_path %>
-<%= link_to "Sign up", new_user_path %>
+
+<% if logged_in? %>
+  Hello <%= session[:user_id] %>
+  <%= link_to "Log out", session_path %>
+<% else %>
+  <%= link_to "Log In", new_session_path %>
+  <%= link_to "Sign up", new_user_path %>
+<% end %>
 
 <%= yield %>
 
