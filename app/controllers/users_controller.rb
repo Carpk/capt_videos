@@ -5,10 +5,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user
+    user = User.new(user_params)
+    redirect_to root_path
   end
 
   def show
 
+  end
+
+private
+
+  def user_params
+    params.require(:user).permit(:username, :password)
   end
 end
