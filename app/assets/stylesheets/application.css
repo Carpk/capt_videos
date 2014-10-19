@@ -14,14 +14,23 @@
 
 .body {
   background: #232323;
-}
-
-h1 {
   color: beige;
 }
+
+/*h1 {
+  color: beige;
+}*/
 
 .centered {
   margin-left: auto;
   margin-right: auto;
   width: 54em;
+}
+
+.float_left {
+  float: left;
+}
+
+.float_right {
+  float: right;
 }
