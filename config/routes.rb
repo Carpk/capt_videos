@@ -13,6 +13,8 @@ CaptVideos::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
+    post 'users' => 'users#create', :as => :create_user
+
     resources :users
     resources :sessions,      only: [:new, :create, :destroy]
 

@@ -1,14 +1,16 @@
-<div class='float_left'>
-  <h1>Welcome to Capt'in Videos</h1>
-</div>
+<div class='header'>
+  <div class='float_left'>
+    <h1><%= link_to "Capt'in Videos", root_path %></h1>
+  </div>
 
-<div class='float_right'>
-  <% if logged_in? %>
-    Hello <%= session[:user_id] %>
-    <%= link_to "Log out", session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Log In", new_session_path %><br>
-    or <br>
-    <%= link_to "Sign up", new_user_path %>
-  <% end %>
+  <div class='float_right'>
+    <% if logged_in? %>
+      Hello <%= session[:user_id] %>
+      <%= link_to "Log out", session_path(session[:user_id]), method: :delete %>
+    <% else %>
+      <%= link_to "Log In", new_session_path %><br>
+      or <br>
+      <%= link_to "Sign up", new_user_path %>
+    <% end %>
+  </div>
 </div>

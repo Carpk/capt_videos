@@ -12,19 +12,29 @@
  *= require_tree .
  */
 
-.body {
+body {
   background: #232323;
+}
+.container {
   color: beige;
+  width: 1088px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/*h1 {
-  color: beige;
-}*/
+.header {
+  height: 80px;
+  margin-bottom: 8px;
+}
 
 .centered {
   margin-left: auto;
   margin-right: auto;
   width: 54em;
+}
+
+.form {
+  width: 172px;
 }
 
 .float_left {

@@ -1,8 +1,11 @@
-this page will log you in
-<div>
+<div class="centered form">
   <%= form_for :session, url: sessions_path do |f| %>
-  <%= f.text_field :username %>
-  <%= f.text_field :password %>
-  <%= f.submit "Log in" %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+
+    <%= f.submit "Log in" %>
   <% end %>
 </div>

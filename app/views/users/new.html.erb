@@ -1,8 +1,14 @@
 
-<div class="centered">
-  <%= form_for @user do |f| %>
+<div class="centered form">
+  <%= form_for :user, url: create_user_path do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %>
+
+    <%= f.label :email_address %>
+    <%= f.text_field :email %>
+
+    <%= f.label :birthdate %>
+    <%= f.text_field :birthdate %>
 
     <%= f.label :password %>
     <%= f.password_field :password %>
