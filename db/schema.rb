@@ -17,14 +17,14 @@ ActiveRecord::Schema.define(version: 20141012171832) do
   enable_extension "plpgsql"
 
   create_table "admins", force: true do |t|
-    t.integer  "user_id_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "comments", force: true do |t|
-    t.integer  "user_id_id"
-    t.integer  "video_id_id"
+    t.integer  "user_id"
+    t.integer  "video_id"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -39,13 +39,14 @@ ActiveRecord::Schema.define(version: 20141012171832) do
   end
 
   create_table "notes", force: true do |t|
-    t.integer  "user_id_id"
+    t.integer  "user_id"
     t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ratings", force: true do |t|
+    t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -67,8 +68,8 @@ ActiveRecord::Schema.define(version: 20141012171832) do
   end
 
   create_table "videos", force: true do |t|
-    t.integer  "user_id_id"
-    t.integer  "tag_id_id"
+    t.integer  "user_id"
+    t.integer  "tag_id"
     t.string   "title"
     t.string   "video_url"
     t.datetime "created_at"
