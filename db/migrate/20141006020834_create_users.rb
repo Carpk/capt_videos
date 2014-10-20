@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string   :username
       t.string   :password
       t.string   :email
-      t.date   :birthdate
+      t.date     :birthdate
       t.boolean  :show_message
 
       t.timestamps
