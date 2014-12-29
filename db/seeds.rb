@@ -6,8 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user_one = User.create(username: "Neo")
+user_one = User.create(username: "admin",
+                       email: "fake@fake.net",
+                       password: "password")
 
 Video.create(user_id: user_one.id,
-             name: 'matrix_reloaded',
+             title: 'matrix_reloaded',
              video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/clubbed+to+death+-+Matrix+soundtrack.mp4')
+
+Video.create(user_id: user_one.id,
+             title: 'matrix_reloaded',
+             video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/Lux+Aeterna+By+Clint+Mansell.mp4')
