@@ -13,6 +13,9 @@ gem 'pg'
 gem 'carrierwave'
 gem 'fog'
 
+# Use for managing user accounts
+gem 'devise'
+
 # To help with css precompile on heroku
 gem 'rails_12factor'
 

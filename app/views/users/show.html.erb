@@ -1,4 +1,11 @@
 <div>
   <h2><%= @user.username %>'s Dashbord</h2>
+  <a href="">upload</a>
   <p>will be used for uploading content, and displaying this users uploaded material.</p>
+  <%=session[:user_id]%>
+</div>
+<div>
+  Uploaded Videos
+
+  <%=@user.username %>
 </div>
