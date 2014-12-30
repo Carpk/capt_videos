@@ -7,8 +7,4 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :birthdate, :password, :password_confirmation) }
   end
-
-  # def sign_in(user)
-  #   session[:user_id] = user.id
-  # end
 end

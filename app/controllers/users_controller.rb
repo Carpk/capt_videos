@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
 
   def new
   end
 
   def create
-    # @user = User.new(user_params)
+    @user = User.find_by_id(session["warden.user.user.key"][0][0])
     # if @user.save
     #   sign_in @user
     #   redirect_to user_path(@user.id)

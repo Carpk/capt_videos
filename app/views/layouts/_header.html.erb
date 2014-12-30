@@ -4,13 +4,13 @@
   </div>
 
   <div class='float_right'>
-    <% if logged_in? %>
-      Hello <%= session[:user_id] %>
-      <%= link_to "Log out", session_path(session[:user_id]), method: :delete %>
+    <% if user_signed_in? %>
+      Welcome <%= @user %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "Log In", new_session_path %><br>
+      <%= link_to "Log In", new_user_session_path %><br>
       or <br>
-      <%= link_to "Sign up", new_user_path %>
+      <%= link_to "Sign up", new_user_registration_path %>
     <% end %>
   </div>
 </div>
