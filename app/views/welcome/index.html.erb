@@ -1,12 +1,15 @@
 
 <div class="centered">
-  <%= video_player({:file => "https://s3-us-west-2.amazonaws.com/captinvideos/clubbed+to+death+-+Matrix+soundtrack.mp4", :image => "/assets/matrix_reloaded.jpg"}, {:width => 768, :height => 432}) %>
+
+  <%= video_player({:file => @videos.sample.video_url}, {:width => 768, :height => 432}) %>
 </div>
 
 <div>
   <h2>Featured</h2>
   <%@videos.each do |video|%>
-    <%=video.title%>
+    <div>
+      <a href=""><%=video.title%></a>
+    </div>
   <%end%>
 </div>
 

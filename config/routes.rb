@@ -5,7 +5,12 @@ CaptVideos::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  # root 'welcome#index'
+
+  devise_scope :user do
+    root to: 'welcome#index'
+    match '/sessions/user', to: 'devise/sessions#create', via: :post
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -14,10 +19,11 @@ CaptVideos::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-    post 'users' => 'users#create', as: :create_user
+    # post 'users' => 'users#create', as: :create_user
 
     resources :users
-    resources :sessions,      only: [:new, :create, :destroy]
+    # resources :sessions,      only: [:new, :create, :destroy]
+    # post 'sessions/user' => 'devise/sessions#create'
 
   # Example resource route with options:
   #   resources :products do
