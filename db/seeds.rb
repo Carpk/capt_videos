@@ -17,3 +17,7 @@ Video.create(user_id: user_one.id,
 Video.create(user_id: user_one.id,
              title: 'matrix_reloaded',
              video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/Lux+Aeterna+By+Clint+Mansell.mp4')
+
+Video.create(user_id: user_one.id,
+             title: 'matrix_reloaded',
+             video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/Two+Steps+From+Hell+-+Blackheart+(Thomas+Bergersen+-+Epic+Dark+Melancholic+Dramatic).mp4')

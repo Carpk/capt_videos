@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20141229012021) do
     t.integer  "user_id"
     t.integer  "tag_id"
     t.string   "title"
-    t.string   "video_url"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -9,9 +9,9 @@ gem 'rails', '4.0.4'
 # gem 'sqlite3'
 gem 'pg'
 
-# Use for support for AWS S3
+# Support for AWS S3
 gem 'carrierwave'
-gem 'fog'
+gem 'fog', '~> 1.3.1'
 
 # Use for managing user accounts
 gem 'devise'

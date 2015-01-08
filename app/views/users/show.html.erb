@@ -1,8 +1,13 @@
 <div>
   <h2><%= @user.username %>'s Dashbord</h2>
-  <a href="">upload</a>
+  <%= form_for :video,  url: create_video_path, :html => {:multipart => true} do |f| %>
+    My video
+    <%= f.text_field :title %><br>
+    <%= f.file_field :content %><br>
+    <%= f.submit "Upload" %>
+  <% end %>
+
   <p>will be used for uploading content, and displaying this users uploaded material.</p>
-  <%=session[:user_id]%>
 </div>
 <div>
   Uploaded Videos
