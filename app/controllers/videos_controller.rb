@@ -1,16 +1,11 @@
 class VideosController < ApplicationController
 
   def create
-    # puts :video[video_params]
-    # uploader = VideoUploader.new
-    # uploader.store!(params[:video])
-    puts "**************************************************************"
-    # puts params[:video][@original_filename]
-    # puts params[:video][:@original_filename]
-    # puts params[:video].original_filename
-    puts "**************************************************************"
-    Video.create!(video_params)
-    redirect_to user_path(session["warden.user.user.key"][0][0])
+    user_id = session["warden.user.user.key"][0][0]
+    params[:video][:user_id] = user_id
+    video = Video.new(video_params)
+    video.save
+    redirect_to user_path(user_id)
   end
 
 private

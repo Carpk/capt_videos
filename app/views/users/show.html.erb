@@ -1,5 +1,6 @@
 <div>
   <h2><%= @user.username %>'s Dashbord</h2>
+
   <%= form_for :video,  url: create_video_path, :html => {:multipart => true} do |f| %>
     My video
     <%= f.text_field :title %><br>
