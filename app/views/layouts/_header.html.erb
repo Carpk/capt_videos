@@ -1,9 +1,9 @@
-<div class='header'>
-  <div class='float_left'>
+<div class="row">
+  <div class="col-sm-10">
     <h1><%= link_to "Capt'in Videos", root_path %></h1>
   </div>
 
-  <div class='float_right'>
+  <div class="col-sm-2">
     <% if user_signed_in? %>
       Signed in as: <%= @user %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>

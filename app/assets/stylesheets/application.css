@@ -9,10 +9,11 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap.min
  *= require_tree .
  */
 
-body {
+/*body {
   background: #232323;
 }
 .container {
@@ -44,3 +45,4 @@ body {
 .float_right {
   float: right;
 }
+*/
