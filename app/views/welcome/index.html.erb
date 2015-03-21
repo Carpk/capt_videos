@@ -1,22 +1,36 @@
-
-<div class="row">
-  <div class="col-sm-10">
-    <div class="">
-      <%= video_player({:file => "https://captainvideos.s3.amazonaws.com/uploads/video/video_url/1/clubbed%2Bto%2Bdeath%2B-%2BMatrix%2Bsoundtrack.mp4"}, {:width => 768, :height => 432}) %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="">
+        <%= video_player({:file => "https://captainvideos.s3.amazonaws.com/uploads/video/video_url/1/clubbed%2Bto%2Bdeath%2B-%2BMatrix%2Bsoundtrack.mp4"}, {:width => 768, :height => 432}) %>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <!-- comments? ad space? similar?-->
     </div>
   </div>
-  <div class="col-sm-2"></div>
-</div>
-<%=@videos.sample.content%>
-<div>
-  <h2>Featured</h2>
-  <%@videos.each do |video|%>
-    <div>
-      <a href=""><%=video.title%></a>
-    </div>
-  <%end%>
 </div>
 
-<div>
-  <h2>New</h2>
+<div class="container-fluid">
+  <h2>Popular</h2>
+  <div class="row">
+    <% @pop_videos.each do |pop_vid| %>
+      <div class="col-sm-2">
+        <img class="img-responsive" src=<%= pop_vid.image %> alt=<%= pop_vid.title %> >
+        <a href=""><%= pop_vid.title %></a>
+      </div>
+    <%end%>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <h2>Recently Uploaded</h2>
+  <div class="row">
+    <% @recently_uploaded.each do |new_vid| %>
+      <div class="col-sm-2">
+        <img class="img-responsive" src=<%= new_vid.image %> alt=<%= new_vid.title %> >
+        <a href=""><%= new_vid.title %></a>
+      </div>
+    <% end %>
+  </div>
 </div>

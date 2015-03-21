@@ -12,12 +12,20 @@ user_one = User.create(username: "admin",
 
 Video.create(user_id: user_one.id,
              title: 'matrix_reloaded',
+             image: 'https://s3-us-west-2.amazonaws.com/captinvideos/MATRIX.jpg',
              video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/clubbed+to+death+-+Matrix+soundtrack.mp4')
 
 Video.create(user_id: user_one.id,
-             title: 'matrix_reloaded',
+             title: 'Lux_Aeterna',
+             image: 'https://s3-us-west-2.amazonaws.com/captinvideos/Lux_Aeterna.jpg',
              video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/Lux+Aeterna+By+Clint+Mansell.mp4')
 
 Video.create(user_id: user_one.id,
-             title: 'matrix_reloaded',
+             title: 'Blackheart',
+             image: 'https://s3-us-west-2.amazonaws.com/captinvideos/Blackheart2012.jpg',
              video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/Two+Steps+From+Hell+-+Blackheart+(Thomas+Bergersen+-+Epic+Dark+Melancholic+Dramatic).mp4')
+
+Video.create(user_id: user_one.id,
+             title: 'Becoming_A_Legend',
+             image: 'https://s3-us-west-2.amazonaws.com/captinvideos/Becoming_A_Legend.jpg',
+             video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/John+Dreamer+-+Becoming+A+Legend+(Epic+Dramatic+Uplifting)+(HD).mp4')

@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @videos = Video.all
+    @pop_videos = Video.find(:all, :order => "id desc", :limit => 6)
+    @recently_uploaded = Video.find(:all, :order => "id desc", :limit => 6)
   end
 end
