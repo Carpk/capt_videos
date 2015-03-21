@@ -13,4 +13,6 @@ class Video < ActiveRecord::Base
     end
     sample_set
   end
+
+
 end

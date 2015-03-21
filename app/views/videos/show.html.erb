@@ -6,7 +6,13 @@
       </div>
       <h3><%= @video.title %></h3>
       <%= @video.user.username %>
-      <%= @video.ratings.score %>
+      <%= @video_score %>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="70"
+        aria-valuemin="0" aria-valuemax="50" style="width: #{@video_score.to_i}%">
+          <span class="sr-only">70% Complete</span>
+        </div>
+      </div>
     </div>
     <div class="col-sm-3">
       <!-- comments? ad space? similar? page length? stop at additional videos?-->
