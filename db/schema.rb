@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20141229012021) do
   end
 
   create_table "ratings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "video_id"
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"

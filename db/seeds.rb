@@ -6,9 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user_one = User.create(username: "admin",
-                       email: "fake@fake.net",
-                       password: "password")
+user_one = User.create!(username: "admin",
+                        email: "fake@fake.net",
+                        birthdate: "Mon, 25 Mar 1968",
+                        password: "password",
+                        password_confirmation: "password")
 
 Video.create(user_id: user_one.id,
              title: 'matrix_reloaded',
@@ -29,3 +31,24 @@ Video.create(user_id: user_one.id,
              title: 'Becoming_A_Legend',
              image: 'https://s3-us-west-2.amazonaws.com/captinvideos/Becoming_A_Legend.jpg',
              video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/John+Dreamer+-+Becoming+A+Legend+(Epic+Dramatic+Uplifting)+(HD).mp4')
+
+10.times do
+    User.create!(username: Faker::Internet.user_name,
+                email: Faker::Internet.email,
+                birthdate: "Mon, 25 Mar 1968",
+                password: "password",
+                password_confirmation: "password")
+end
+
+50.times do
+    Video.create(user_id: rand(2..10),
+             title: Faker::Company.catch_phrase,
+             image: Faker::Avatar.image,
+             video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/John+Dreamer+-+Becoming+A+Legend+(Epic+Dramatic+Uplifting)+(HD).mp4')
+end
+
+175.times do
+    Rating.create(user_id: rand(2..10),
+                video_id: rand(1..52),
+                score: rand(1..5))
+end

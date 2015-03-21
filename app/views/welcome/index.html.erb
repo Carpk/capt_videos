@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="col-sm-3">
-      <!-- comments? ad space? similar?-->
+      <!-- comments? ad space? similar? page length? stop at additional videos?-->
     </div>
   </div>
 </div>
@@ -16,8 +16,8 @@
   <div class="row">
     <% @pop_videos.each do |pop_vid| %>
       <div class="col-sm-2">
-        <img class="img-responsive" src=<%= pop_vid.image %> alt=<%= pop_vid.title %> >
-        <a href=""><%= pop_vid.title %></a>
+        <img class="img-rounded" width="160" height="94" src=<%= pop_vid.image %> alt=<%= pop_vid.title %> >
+        <%= link_to pop_vid.title, video_path(pop_vid.id) %>
       </div>
     <%end%>
   </div>
@@ -28,8 +28,8 @@
   <div class="row">
     <% @recently_uploaded.each do |new_vid| %>
       <div class="col-sm-2">
-        <img class="img-responsive" src=<%= new_vid.image %> alt=<%= new_vid.title %> >
-        <a href=""><%= new_vid.title %></a>
+        <img class="img-rounded" width="160" height="94" src=<%= new_vid.image %> alt=<%= new_vid.title %> >
+        <%= link_to new_vid.title, video_path(new_vid.id) %>
       </div>
     <% end %>
   </div>

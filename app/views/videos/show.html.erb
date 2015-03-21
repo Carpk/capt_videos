@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="">
+        <%= video_player({:file => @video.video_url}, {:width => 768, :height => 432}) %>
+      </div>
+      <h3><%= @video.title %></h3>
+      <%= @video.user.username %>
+      <%= @video.ratings.score %>
+    </div>
+    <div class="col-sm-3">
+      <!-- comments? ad space? similar? page length? stop at additional videos?-->
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <h2>More from user:</h2>
+  <div class="row">
+    <% @user_videos.each do |sample_vid| %>
+      <div class="col-sm-2">
+        <img class="img-rounded" width="160" height="94" src=<%= sample_vid.image %> alt=<%= sample_vid.title %> >
+        <%= link_to sample_vid.title, video_path(sample_vid.id) %>
+      </div>
+    <%end%>
+  </div>
+</div>

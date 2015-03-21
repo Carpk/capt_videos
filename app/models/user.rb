@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
   validates :birthdate, presence: true
   validates :password_confirmation, presence: true
   validates_confirmation_of :password
+
+  has_many :videos
+  has_many :ratings
 end

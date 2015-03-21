@@ -8,6 +8,11 @@ class VideosController < ApplicationController
     redirect_to user_path(user_id)
   end
 
+  def show
+    @video = Video.find_by_id(params[:id])
+    @user_videos = Video.collection_sample(@video.user_id)
+  end
+
 private
 
   def video_params
