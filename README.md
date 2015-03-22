@@ -20,3 +20,6 @@ Capt Videos used AWS s3 service, JW Player, Ruby 2.1.1p76, Rails 4.0.4, Bootstra
 
 While this site is currently a work in progress, it has been deployed to [heroku](http://captinvideos.herokuapp.com/). Although, the screenshots may be a better representation of the applications current state.
 
+![landing page](https://raw.githubusercontent.com/Carpk/capt_videos/master/app/assets/images/landing_page.png)
+
+![video page](https://raw.githubusercontent.com/Carpk/capt_videos/master/app/assets/images/video_page.png)
