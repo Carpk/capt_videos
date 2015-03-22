@@ -4,8 +4,19 @@ A nautical youtube clone that allows members to post thier favorite maritime vid
 
 ##
 
-Capt Videos used AWS s3 service, JW Player, Ruby 2.1.1p76, Rails 4.0.4
+Capt Videos used AWS s3 service, JW Player, Ruby 2.1.1p76, Rails 4.0.4, Bootstrap, Devise
 
 ## Getting Started
 
-While this site is currently a work in progress, it has been deployed to [heroku](http://captinvideos.herokuapp.com/). But please come back later to view the changes.
+`bundle`
+
+``
+
+`rake db:migrate`
+
+`rake db:seed`
+
+## Screenshots
+
+While this site is currently a work in progress, it has been deployed to [heroku](http://captinvideos.herokuapp.com/). Although, the screenshots may be a better representation of the applications current state.
+

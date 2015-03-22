@@ -10,8 +10,6 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find_by_id(params[:id])
-    @user_videos = Video.collection_sample(@video.user_id)
-    @video_score = Rating.avg_score(params[:id])
   end
 
 private
