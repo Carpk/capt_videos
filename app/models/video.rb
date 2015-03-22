@@ -4,6 +4,7 @@ class Video < ActiveRecord::Base
   belongs_to :user
   belongs_to :tag
   has_many :ratings
+  has_many :tags
 
   def collection_samples
     sample_set = []

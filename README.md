@@ -4,7 +4,7 @@ A nautical youtube clone that allows members to post thier favorite maritime vid
 
 ##
 
-Capt Videos used AWS s3 service, JW Player, Ruby 2.1.1p76, Rails 4.0.4, Bootstrap, Devise
+Capt Videos used AWS s3 service, Carrierwave, Fog, JW Player, Ruby 2.1.1p76, Rails 4.0.4, Bootstrap, Devise, PostgreSQL
 
 ## Getting Started
 

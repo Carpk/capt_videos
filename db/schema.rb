@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20141229012021) do
   end
 
   create_table "tags", force: true do |t|
+    t.integer  "video_id"
     t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 20141229012021) do
     t.string   "username"
     t.string   "password"
     t.date     "birthdate"
+    t.string   "avatar"
     t.boolean  "show_message"
     t.datetime "created_at"
     t.datetime "updated_at"

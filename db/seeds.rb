@@ -6,10 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user_one = User.create!(username: "admin",
+user_one = User.create(username: "admin",
                         email: "fake@fake.net",
                         birthdate: "Mon, 25 Mar 1968",
                         password: "password",
+                        avatar: "https://s3-us-west-2.amazonaws.com/captinvideos/Becoming_A_Legend.jpg",
                         password_confirmation: "password")
 
 Video.create(user_id: user_one.id,
@@ -33,18 +34,28 @@ Video.create(user_id: user_one.id,
              video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/John+Dreamer+-+Becoming+A+Legend+(Epic+Dramatic+Uplifting)+(HD).mp4')
 
 10.times do
-    User.create!(username: Faker::Internet.user_name,
+    User.create(username: Faker::Internet.user_name,
                 email: Faker::Internet.email,
                 birthdate: "Mon, 25 Mar 1968",
+                avatar: Faker::Avatar.image,
                 password: "password",
                 password_confirmation: "password")
 end
 
+image_array = ["http://i.imgur.com/mWUOPTB.jpg", "http://i.imgur.com/CCajhN9.jpg",
+               "http://i.imgur.com/XNYn1kP.jpg", "http://i.imgur.com/cWLmX1g.jpg",
+               "http://i.imgur.com/gIT6SeI.jpg", "http://i.imgur.com/7OZgr7X.jpg",
+               "http://i.imgur.com/XaVQo09.jpg", "http://i.imgur.com/o2DwNtR.jpg",
+               "http://i.imgur.com/BFOeIuk.jpg", "http://i.imgur.com/k7vw9vj.jpg"]
+
+tag_array = ["Transducer", "GPS", "Fiberglass", "Tuna", "Bait", "Rig", "Outboard", "Dolphin"]
+
 50.times do
-    Video.create(user_id: rand(2..10),
+    video = Video.create(user_id: rand(2..10),
              title: Faker::Company.catch_phrase,
-             image: Faker::Avatar.image,
+             image: image_array.sample,
              video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/John+Dreamer+-+Becoming+A+Legend+(Epic+Dramatic+Uplifting)+(HD).mp4')
+    Tag.create(video_id: video.id, tag: tag_array.sample)
 end
 
 175.times do
