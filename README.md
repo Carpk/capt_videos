@@ -22,4 +22,9 @@ While this site is currently a work in progress, it has been deployed to [heroku
 
 ![landing page](https://raw.githubusercontent.com/Carpk/capt_videos/master/app/assets/images/landing_page.png)
 
+The Landing page, video player will probably be removed.
+
+
 ![video page](https://raw.githubusercontent.com/Carpk/capt_videos/master/app/assets/images/video_page.png)
+
+Video page, shows uploader and additional videos from uploader. Also videos with matching tags.

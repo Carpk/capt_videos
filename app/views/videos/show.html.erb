@@ -5,6 +5,7 @@
         <%= video_player({:file => @video.video_url}, {:width => 768, :height => 432}) %>
       </div>
       <h3><%= @video.title %></h3>
+      <img class="img-rounded" width="80" height="47" src=<%= @video.user.avatar %> >
       <%= @video.user.username %>
       <div class="pull-right">
         <progress value=<%= @video.avg_score %> max="50"></progress>
