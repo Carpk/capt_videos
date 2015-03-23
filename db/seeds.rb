@@ -51,7 +51,7 @@ image_array = ["http://i.imgur.com/mWUOPTB.jpg", "http://i.imgur.com/CCajhN9.jpg
 tag_array = ["Transducer", "GPS", "Fiberglass", "Tuna", "Bait", "Rig", "Outboard", "Dolphin"]
 
 50.times do
-    video = Video.create(user_id: rand(2..10),
+    video = Video.create(user_id: rand(2..9),
              title: Faker::Company.catch_phrase,
              image: image_array.sample,
              video_url: 'https://s3-us-west-2.amazonaws.com/captinvideos/John+Dreamer+-+Becoming+A+Legend+(Epic+Dramatic+Uplifting)+(HD).mp4')
@@ -59,7 +59,7 @@ tag_array = ["Transducer", "GPS", "Fiberglass", "Tuna", "Bait", "Rig", "Outboard
 end
 
 175.times do
-    Rating.create(user_id: rand(2..10),
-                video_id: rand(1..52),
+    Rating.create(user_id: rand(2..9),
+                video_id: rand(1..54),
                 score: rand(1..5))
 end

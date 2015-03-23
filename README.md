@@ -10,7 +10,7 @@ Capt Videos used AWS s3 service, Carrierwave, Fog, JW Player, Ruby 2.1.1p76, Rai
 
 `bundle`
 
-``
+`rake db:create`
 
 `rake db:migrate`
 

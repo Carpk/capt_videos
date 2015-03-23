@@ -85,7 +85,6 @@ ActiveRecord::Schema.define(version: 20141229012021) do
 
   create_table "videos", force: true do |t|
     t.integer  "user_id"
-    t.integer  "tag_id"
     t.string   "title"
     t.string   "image"
     t.string   "video_url"

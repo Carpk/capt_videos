@@ -6,7 +6,6 @@
       </div>
       <h3><%= @video.title %></h3>
       <%= @video.user.username %>
-      <%= @video.avg_score %>
       <div class="pull-right">
         <progress value=<%= @video.avg_score %> max="50"></progress>
       </div>
@@ -20,7 +19,19 @@
 <div class="container-fluid">
   <h2>More from User</h2>
   <div class="row">
-    <% @video.collection_samples.each do |sample_video| %>
+    <% @video.user_collection.each do |sample_video| %>
+      <div class="col-sm-2">
+        <img class="img-rounded" width="160" height="94" src=<%= sample_video.image %> alt=<%= sample_video.title %> >
+        <%= link_to sample_video.title, video_path(sample_video.id) %>
+      </div>
+    <%end%>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <h2>Similar videos</h2>
+  <div class="row">
+    <% @video.matching_tag.each do |sample_video| %>
       <div class="col-sm-2">
         <img class="img-rounded" width="160" height="94" src=<%= sample_video.image %> alt=<%= sample_video.title %> >
         <%= link_to sample_video.title, video_path(sample_video.id) %>
