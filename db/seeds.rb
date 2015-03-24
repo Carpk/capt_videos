@@ -63,3 +63,15 @@ end
                 video_id: rand(1..54),
                 score: rand(1..5))
 end
+
+175.times do
+    Comment.create(user_id: rand(1..9),
+                   video_id: rand(1..54),
+                   body: Faker::Lorem.paragraph)
+end
+
+50.times do
+    Message.create(sender_id: rand(1..9),
+                    recipient_id: rand(1..9),
+                    body: Faker::Lorem.paragraph)
+end

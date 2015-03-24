@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
 
   has_many :videos
   has_many :ratings
+  has_many :comments
 end

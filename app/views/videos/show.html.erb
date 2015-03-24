@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-9">
       <div class="">
-        <%= video_player({:file => @video.video_url}, {:width => 768, :height => 432}) %>
+        <%= video_player({:file => @video.video_url, :image => @video.image}, {:width => 768, :height => 432}) %>
       </div>
       <h3><%= @video.title %></h3>
       <img class="img-rounded" width="80" height="47" src=<%= @video.user.avatar %> >
@@ -12,7 +12,12 @@
       </div>
     </div>
     <div class="col-sm-3">
-      <!-- comments? ad space? similar? page length? stop at additional videos?-->
+      <% @video.comments.each do |comment| %>
+        <div class="row">
+          <h4><%= comment.user.username %></h4>
+          <p><%= comment.body %><p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
