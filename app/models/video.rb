@@ -16,7 +16,7 @@ class Video < ActiveRecord::Base
 
   def user_collection
     sample_set = []
-    user_videos = Video.where(user_id: self.user_id)
+    user_videos = self.user.videos
     6.times do
       sample_set << user_videos.sample
     end
@@ -24,7 +24,7 @@ class Video < ActiveRecord::Base
   end
 
   def avg_score
-    scores = Rating.where(video_id: self.id)
+    scores = self.ratings
     total = 0
     scores.each do |score_card|
       total += score_card.score
@@ -33,15 +33,12 @@ class Video < ActiveRecord::Base
   end
 
   def matching_tag
-    tags = Tag.where(video_id: self.id)
+    tags = self.tags
     tagged_samples = []
     tags.each do |tagged|
-      matching_videos = Tag.where(tag: tagged.tag)
-      6.times do
-        tagged_samples << matching_videos.sample.video
-      end
+      tagged_samples << tagged.sample_set
     end
-    tagged_samples
+    tagged_samples.flatten
   end
 
 end

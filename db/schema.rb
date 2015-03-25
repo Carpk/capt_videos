@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20141229012021) do
     t.datetime "updated_at"
   end
 
+  add_index "tags", ["tag"], name: "index_tags_on_tag", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "password"
