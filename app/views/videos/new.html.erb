@@ -1,4 +1,33 @@
-<div>
-page will be for uploading new videos (possibly not needed)
+<div class="container-fluid">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <%= form_for @video do |f| %>
+      select which cover icons /gifs to use<br/>
+      <%= f.label :title %>:
+      <%= f.text_field :title %><br/>
+      <%= f.hidden_field(:video_url) %>
+      <%= f.fields_for @tag do |builder| %>
 
+        <%= check_box_tag(:electronics) %>
+        <%= label_tag(:electronics, "electronics") %>
+        <%= check_box_tag(:fiberglass) %>
+        <%= label_tag(:fiberglass, "fiberglass") %>
+        <%= check_box_tag(:teak_decks) %>
+        <%= label_tag(:teak_decks, "teak decks") %>
+        <%= check_box_tag(:mechanical) %>
+        <%= label_tag(:mechanical, "mechanical") %>
+        <%= check_box_tag(:radio) %>
+        <%= label_tag(:radio, "radio") %>
+        <%= check_box_tag(:audio) %>
+        <%= label_tag(:audio, "audio") %>
+        <%= check_box_tag(:video) %>
+        <%= label_tag(:video, "video") %>
+        <%= check_box_tag(:navigation) %>
+        <%= label_tag(:navigation, "navigation") %>
+
+      <% end %><br/>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <div class="col-sm-3"></div>
 </div>

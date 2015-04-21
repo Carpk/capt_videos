@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(session["warden.user.user.key"][0][0])
-    @new_video = Video.new
+    @uploader = Video.new.video_url
+    @uploader.success_action_redirect = new_video_url
   end
 
 private

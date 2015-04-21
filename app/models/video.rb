@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  mount_uploader :content, VideoUploader
+  mount_uploader :video_url, VideoUploader
   after_create  :create_rating
 
   belongs_to :user
@@ -7,6 +7,8 @@ class Video < ActiveRecord::Base
   has_many :comments
   has_many :ratings
   has_many :tags
+
+  accepts_nested_attributes_for :tag
 
   def create_rating
     Rating.create(user_id: self.user_id,

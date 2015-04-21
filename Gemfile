@@ -12,7 +12,7 @@ gem 'rails', '4.0.4'
 gem 'pg'
 
 # Support for AWS S3
-gem 'carrierwave'
+gem 'carrierwave_direct'
 gem 'fog', '~> 1.3.1'
 
 # Use for managing user accounts

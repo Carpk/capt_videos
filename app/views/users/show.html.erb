@@ -1,17 +1,28 @@
-<div>
-  <h2><%= @user.username %>'s Dashbord</h2>
+<div class="container-fluid">
+  <h3><%= @user.username.capitalize %>'s Dashbord</h3>
+  <div class="row">
+    <div class="col-sm-8"></div>
+    <div class="col-sm-4 ">
 
-  <%= form_for :video,  url: create_video_path, :html => {:multipart => true} do |f| %>
-    My video
-    <%= f.text_field :title %><br>
-    <%= f.file_field :content %><br>
-    <%= f.submit "Upload" %>
-  <% end %>
+      <%= direct_upload_form_for @uploader do |f| %>
+        <%= f.label :Select_video%>
+        <%= f.file_field :video_url %><br>
+        <%= f.submit "Upload" %>
+      <% end %>
 
-  <p>will be used for uploading content, and displaying this users uploaded material.</p>
+    </div>
+
+  </div>
 </div>
-<div>
-  Uploaded Videos
 
-  <%=@user.username %>
+<div class="container-fluid">
+  Uploaded Videos
+  <div class="row">
+    <% @user.videos.each do |video| %>
+      <div class="col-sm-2">
+        <img class="img-rounded" width="160" height="94" src=<%= video.image %> alt=<%= video.title %> >
+        <%= link_to video.title, video_path(video.id) %>
+      </div>
+    <% end %>
+  </div>
 </div>
