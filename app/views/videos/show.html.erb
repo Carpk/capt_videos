@@ -4,6 +4,7 @@
       <div class="">
         <%= video_player({:file => @video.video_url, :image => @video.image}, {:width => 768, :height => 432}) %>
       </div>
+      <%= @video.video_url %>
       <h3><%= @video.title %></h3>
       <img class="img-rounded" width="80" height="47" src=<%= @video.user.avatar %> >
       <%= @video.user.username %>

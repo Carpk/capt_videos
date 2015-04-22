@@ -1,10 +1,10 @@
-# Capt Videos
+# Capt'n Videos
 
 A nautical youtube clone that allows members to post thier favorite maritime videos to share with the rest of the community.
 
 ##
 
-Capt Videos used AWS s3 service, Carrierwave, Fog, JW Player, Ruby 2.1.1p76, Rails 4.0.4, Bootstrap, Devise, PostgreSQL
+Capt'n Videos used AWS s3 service, Carrierwave Direct, Fog, JW Player, Ruby 2.1.1p76, Rails 4.0.4, Bootstrap, Devise, PostgreSQL
 
 ## Getting Started
 
