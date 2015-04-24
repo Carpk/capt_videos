@@ -5,11 +5,7 @@
       select which cover icons /gifs to use<br/>
       <%= f.label :title %>:
       <%= f.text_field :title %><br/>
-
-      <%= @video.inspect %>
       <%= f.hidden_field :key %>
-
-      <%= f.hidden_field :video_url %>
 
       <%= f.fields_for @tag do |builder| %>
         <%= check_box_tag(:electronics) %>

@@ -4,12 +4,8 @@ class VideosController < ApplicationController
     # {"bucket"=>"captainvideos",
     #  "key"=>"uploads/video/video_url//b7ba6f28-bf37-459e-86f7-02d45c104b1a/Twisted Jukebox - Angels Will Rise.mp4",
     #  "etag"=>"\"e5728b0c0973a70cc7f917aca0286e6e\""}
-    puts "************************"
-    puts params.class
-    puts "************************"
 
     @video = Video.new(params.permit( :key))
-    # @video[:video_url] = params[:key]
     @tag = Tag.new
   end
 

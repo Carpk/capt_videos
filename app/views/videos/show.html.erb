@@ -2,9 +2,13 @@
   <div class="row">
     <div class="col-sm-9">
       <div class="">
-        <%= video_player({:file => @video.video_url, :image => @video.image}, {:width => 768, :height => 432}) %>
+        <%= video_player({:file => @video.video_url.to_s, :image => @video.image}, {:width => 768, :height => 432}) %>
       </div>
-      <%= @video.video_url %>
+
+      <%= @video.video_url %><br>
+
+      https://s3.amazonaws.com/captnvideos/uploads/video/video_url/c2361388-478f-4533-9399-2870534561a0/Twisted+Jukebox+-+Angels+Will+Rise.mp4
+
       <h3><%= @video.title %></h3>
       <img class="img-rounded" width="80" height="47" src=<%= @video.user.avatar %> >
       <%= @video.user.username %>
