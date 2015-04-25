@@ -14,6 +14,8 @@ Capt'n Videos used AWS s3 service, Carrierwave Direct, Fog, JW Player, Ruby 2.1.
 
 `rake db:migrate`
 
+Seeding note: To seed db, you must comment out 'mount_uploader :video_url, VideoUploader' in Video model, run seed, then uncomment.
+
 `rake db:seed`
 
 ## Screenshots
