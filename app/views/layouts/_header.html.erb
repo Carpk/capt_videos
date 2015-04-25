@@ -1,17 +1,26 @@
 
-<div class="jumbotron row">
-  <div class="col-sm-10">
-    <h1><%= link_to "Capt'n Videos", root_path %></h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "Capt'n Videos", root_path, { :class=>"navbar-brand" } %>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+    <div class="pull-right">
+      <% if user_signed_in? %>
+        Signed in as: <%= link_to "fix_me", user_path(session["warden.user.user.key"][0][0]) %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Log In", new_user_session_path %>
+        or
+        <%= link_to "Sign up", new_user_registration_path %>
+      <% end %>
+    </div>
   </div>
-
-  <div class="col-sm-2">
-    <% if user_signed_in? %>
-      Signed in as: <%= link_to "fix_me", user_path(session["warden.user.user.key"][0][0]) %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Log In", new_user_session_path %><br>
-      or <br>
-      <%= link_to "Sign up", new_user_registration_path %>
-    <% end %>
-  </div>
-</div>
+</nav>
