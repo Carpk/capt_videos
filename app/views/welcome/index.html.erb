@@ -1,20 +1,14 @@
-<div class="container-fluid">
+<div class="container">
 
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="jumbotron col-sm-10">
-      <div>
-        <h2>Welcome to Capt'n Videos</h2>
-        <p>This site is dedicated to diy videos on maintaining your marine vessel.</p>
-      </div>
-    </div>
-    <div class="col-sm-1"></div>
+  <div class="jumbotron">
+    <h2>Welcome to Capt'n Videos</h2>
+    <p class="small">This site is dedicated to diy videos on maintaining your marine vessel. Feel free to join and upload as many videos as you would like.</p>
   </div>
 
   <div class="row">
     <div class="col-sm-9">
       <div class="">
-        <%= video_player({:file => "https://s3-us-west-2.amazonaws.com/captinvideos/clubbed+to+death+-+Matrix+soundtrack.mp4"}, {:width => 768, :height => 432}) %>
+        <%= video_player({:file => @vid_of_day.video_url.to_s}, {:width => 768, :height => 432}) %>
       </div>
     </div>
     <div class="col-sm-3">
@@ -24,20 +18,20 @@
   </div>
 </div>
 
-<div class="container-fluid">
-  <h2>Popular</h2>
+<div class="container">
+  <h2>Top rated</h2>
   <div class="row">
-    <% @pop_videos.each do |pop_vid| %>
+    <% @rated_videos.each do |rated_vid| %>
       <div class="col-sm-2">
-        <img class="img-rounded" width="160" height="94" src=<%= pop_vid.image %> alt=<%= pop_vid.title %> >
-        <%= link_to pop_vid.title, video_path(pop_vid.id) %>
+        <img class="img-rounded" width="160" height="94" src=<%= rated_vid.image %> alt=<%= rated_vid.title %> >
+        <%= link_to rated_vid.title, video_path(rated_vid.id) %>
       </div>
     <%end%>
   </div>
 </div>
 
-<div class="container-fluid">
-  <h2>Recently Uploaded</h2>
+<div class="container">
+  <h2>Recent Uploads</h2>
   <div class="row">
     <% @recently_uploaded.each do |new_vid| %>
       <div class="col-sm-2">

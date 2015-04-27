@@ -6,21 +6,20 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li><a href="#">categories</a></li>
+        <li><a href="#">videos</a></li>
+        <li><a href="#">community</a></li>
+        <li><a href="#">forums</a></li>
       </ul>
     </div>
-    <div class="pull-right">
+    <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
-        Signed in as: <%= link_to "fix_me", user_path(session["warden.user.user.key"][0][0]) %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <li>Signed in as: <%= link_to "fix_me", user_path(session["warden.user.user.key"][0][0]) %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <%= link_to "Log In", new_user_session_path %>
-        or
-        <%= link_to "Sign up", new_user_registration_path %>
+        <li><%= link_to "Log In", new_user_session_path, { :class=>"glyphicon glyphicon-log-in" } %></li>
+        <li><%= link_to "Sign up", new_user_registration_path, { :class=>"glyphicon glyphicon-user" } %></li>
       <% end %>
-    </div>
+    </ul>
   </div>
 </nav>

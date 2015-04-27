@@ -16,18 +16,3 @@
 //= require bootstrap.min
 //= require_tree .
 
-
-$(document).ready(function() {
-
-  $(".uploader").click(function(e) {
-    e.preventDefault()
-    $("#uploading-prompt").show();
-    $.post(<%= create_video_path.to_json %>, function() {
-
-    })
-  })
-
-
-
-
-});

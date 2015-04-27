@@ -25,6 +25,15 @@ class Video < ActiveRecord::Base
     sample_set
   end
 
+  def self.top_rated
+    rated_vids = []
+    pack = Rating.popular_ratings
+    7.times do
+      rated_vids << pack.sample.video
+    end
+    rated_vids
+  end
+
   def avg_score
     scores = self.ratings
     total = 0

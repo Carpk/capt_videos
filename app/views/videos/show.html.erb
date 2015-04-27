@@ -1,10 +1,9 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-9">
-      <div class="">
+<div class="container">
 
-        <%= video_player({:file => @video.video_url.to_s, :image => @video.image}, {:width => 768, :height => 432}) %>
-      </div>
+  <div class="row">
+
+    <div class="col-sm-9">
+      <%= video_player({:file => @video.video_url.to_s, :image => @video.image}, {:width => 768, :height => 432}) %>
 
       <h3><%= @video.title %></h3>
       <img class="img-rounded" width="80" height="47" src=<%= @video.user.avatar %> >
@@ -13,18 +12,23 @@
         <progress value=<%= @video.avg_score %> max="50"></progress>
       </div>
     </div>
+
     <div class="col-sm-3">
-      <% @video.comments.each do |comment| %>
-        <div class="row">
-          <h4><%= comment.user.username %></h4>
-          <p><%= comment.body %><p>
-        </div>
-      <% end %>
+      <div class="row">
+        <% @video.comments.each do |comment| %>
+          <div>
+            <h4><%= comment.user.username %></h4>
+            <p><%= comment.body %><p>
+          </div>
+        <% end %>
+      </div>
     </div>
+
   </div>
+
 </div>
 
-<div class="container-fluid">
+<div class="container">
   <h2>More from User</h2>
   <div class="row">
     <% @video.user_collection.each do |sample_video| %>
@@ -36,7 +40,7 @@
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container">
   <h2>Similar videos</h2>
   <div class="row">
     <% @video.matching_tag.each do |sample_video| %>
