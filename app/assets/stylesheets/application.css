@@ -13,9 +13,24 @@
  *= require_tree .
  */
 
-
-#uploading-prompt {
-  /*visibility: hidden;*/
-  display: none;
+html {
+  position: relative;
+  min-height: 100%;
 }
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 90px;
+}
+.container-fluid .text-muted {
+  margin: 20px 0;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #EEF1F5;
+}
+
 
