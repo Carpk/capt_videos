@@ -33,7 +33,7 @@
   <div class="row">
     <% @video.user_collection.each do |sample_video| %>
       <div class="col-sm-2">
-        <img class="img-rounded" width="160" height="94" src=<%= sample_video.image %> alt=<%= sample_video.title %> >
+        <%= link_to(image_tag(sample_video.image, :size=>"160x94", :class=>"img-rounded"), video_path(sample_video.id)) %>
         <%= link_to sample_video.title, video_path(sample_video.id) %>
       </div>
     <%end%>
@@ -43,10 +43,10 @@
 <div class="container">
   <h2>Similar videos</h2>
   <div class="row">
-    <% @video.matching_tag.each do |sample_video| %>
+    <% @video.matching_tag.each do |similar_video| %>
       <div class="col-sm-2">
-        <img class="img-rounded" width="160" height="94" src=<%= sample_video.image %> alt=<%= sample_video.title %> >
-        <%= link_to sample_video.title, video_path(sample_video.id) %>
+        <%= link_to(image_tag(similar_video.image, :size=>"160x94", :class=>"img-rounded"), video_path(similar_video.id)) %>
+        <%= link_to similar_video.title, video_path(similar_video.id) %>
       </div>
     <%end%>
   </div>
