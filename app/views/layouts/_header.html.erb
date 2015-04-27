@@ -16,8 +16,8 @@
         <li>Signed in as: <%= link_to current_user.username, user_path(session["warden.user.user.key"][0][0]) %></li>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to "Log In", new_user_session_path, { :class=>"glyphicon glyphicon-log-in" } %></li>
-        <li><%= link_to "Sign up", new_user_registration_path, { :class=>"glyphicon glyphicon-user" } %></li>
+        <li><%= link_to "Log In", new_user_session_path, { :class=>"glyphicon" } %></li>
+        <li><%= link_to "Sign up", new_user_registration_path, { :class=>"glyphicon" } %></li>
       <% end %>
     </ul>
   </div>
