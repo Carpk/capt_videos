@@ -10,4 +10,13 @@ class Tag < ActiveRecord::Base
     tagged_samples
   end
 
+  def self.tag_names
+    tags = Tag.all
+    categories = []
+    tags.each do |tag|
+      categories << tag.tag
+    end
+    categories.uniq
+  end
+
 end

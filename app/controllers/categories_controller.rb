@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
 
   def index
-    @tags = Tag.all
+    @tags = Tag.tag_names
   end
 end
