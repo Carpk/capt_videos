@@ -1,8 +1,12 @@
-<div class="container-fluid">
+<div class="container">
   <h3><%= @user.username.capitalize %>'s Dashbord</h3>
   <div class="row">
-    <div class="col-sm-8"></div>
-    <div class="col-sm-4 ">
+    <div class="col-sm-7">
+      Member since:
+      Number of uploads:
+      top tags:
+    </div>
+    <div class="col-sm-5 ">
 
       <%= direct_upload_form_for @uploader do |f| %>
         <%= f.label :select_video%>
@@ -15,12 +19,12 @@
   </div>
 </div>
 
-<div class="container-fluid">
-  Uploaded Videos
+<div class="container">
+  <h4>Uploaded Videos</h4>
   <div class="row">
     <% @user.videos.each do |video| %>
       <div class="col-sm-2">
-        <img class="img-rounded" width="160" height="94" src=<%= video.image %> alt=<%= video.title %> >
+        <%= link_to(image_tag(video.image, :size=>"160x94", :class=>"img-rounded"), video_path(video.id)) %>
         <%= link_to video.title, video_path(video.id) %>
       </div>
     <% end %>

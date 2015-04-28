@@ -1,3 +1,4 @@
+<%= link_to(image_tag("assets/images/Captain-at-sea.jpg", :size=>"80", :class=>"img-rounded"), root_path) %>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -5,15 +6,15 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li><a href="#">categories</a></li>
-        <li><a href="#">videos</a></li>
-        <li><a href="#">community</a></li>
-        <li><a href="#">forums</a></li>
+        <li><%= link_to "Categories", categories_path %></li>
+        <li><%= link_to "Groups", groups_path %></li>
+        <li><%= link_to "Community", community_index_path %></li>
+        <li><%= link_to "Forums", forums_path %></li>
       </ul>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
-        <li>Signed in as: <%= link_to current_user.username, user_path(session["warden.user.user.key"][0][0]) %></li>
+        <li><%= link_to "Signed in as: " + current_user.username, user_path(session["warden.user.user.key"][0][0]) %></li>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "Log In", new_user_session_path, { :class=>"glyphicon" } %></li>
