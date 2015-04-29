@@ -6,6 +6,6 @@ class CategoriesController < ApplicationController
 
   def show
     tag = params[:id]
-    @all_tags = Tag.where(tag: tag)
+    @tagged_vids = Tag.where(tag: tag)
   end
 end

@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <% @tags.each do |name| %>
-      <div class="col-sm-2"><%=link_to name, category_path(name)%></div>
+      <div class="pull-left listing-box"><%=link_to name, category_path(name)%></div>
     <% end %>
   </div>
 </div>

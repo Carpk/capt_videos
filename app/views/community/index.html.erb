@@ -1,5 +1,7 @@
-<div>
+<div class="container">
   <div>
-    community index will list all users
+    <% @all_users.each do |user| %>
+      <div class="pull-left listing-box"><%=link_to user.username, community_path(user.username)%></div>
+    <% end %>
   </div>
 </div>
