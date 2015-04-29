@@ -22,7 +22,7 @@
   <div class="row">
     <% @rated_videos.each do |rated_vid| %>
       <div class="col-sm-2">
-      <%= link_to(image_tag(rated_vid.image, :size=>"160x94", :class=>"img-rounded"), video_path(rated_vid.id)) %>
+        <%= link_to(image_tag(rated_vid.image, :size=>"160x94", :class=>"img-rounded"), video_path(rated_vid.id)) %>
         <%= link_to rated_vid.title, video_path(rated_vid.id)%>
       </div>
     <%end%>
@@ -34,7 +34,7 @@
   <div class="row">
     <% @recently_uploaded.each do |new_vid| %>
       <div class="col-sm-2">
-      <%= link_to(image_tag(new_vid.image, :size=>"160x94", :class=>"img-rounded"), video_path(new_vid.id)) %>
+        <%= link_to(image_tag(new_vid.image, :size=>"160x94", :class=>"img-rounded"), video_path(new_vid.id)) %>
         <%= link_to new_vid.title, video_path(new_vid.id) %>
       </div>
     <% end %>
