@@ -1,9 +1,8 @@
 class CreateTags < ActiveRecord::Migration
   def change
     create_table :tags do |t|
-      t.references :video
-      t.string    :tag
-      t.index     :tag
+      t.string    :name
+      t.index     :name
 
       t.timestamps
     end

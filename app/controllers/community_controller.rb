@@ -5,6 +5,6 @@ class CommunityController < ApplicationController
   end
 
   def show
-    @user_profile = User.find_by_username(params[:id])
+    @user_profile = User.find_by_username(params[:id].to_s)
   end
 end
