@@ -34,7 +34,7 @@ class Video < ActiveRecord::Base
     rated_vids
   end
 
-  def avg_score
+  def average_score
     scores = self.ratings
     total = 0
     scores.each do |score_card|
