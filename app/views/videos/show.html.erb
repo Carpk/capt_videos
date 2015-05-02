@@ -10,11 +10,20 @@
       <%= link_to @video.user.username, community_path(@video.user.username) %><br>
       <%= @video.created_at %>
       <div class="pull-right">
-
+        <progress value=<%= @video.avg_score %> max="50"></progress>
       </div>
     </div>
 
-
+    <div class="col-sm-3">
+      <div class="row">
+        <% @video.comments.each do |comment| %>
+          <div>
+            <h4><%= comment.user.username %></h4>
+            <p><%= comment.body %><p>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
   </div>
 

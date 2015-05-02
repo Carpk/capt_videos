@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  # mount_uploader :video_url, VideoUploader
+  mount_uploader :video_url, VideoUploader
   after_create  :create_rating
 
   has_and_belongs_to_many :tags, :join_table => "videos_tags"
@@ -25,15 +25,16 @@ class Video < ActiveRecord::Base
     sample_set
   end
 
-  def self.random_video
+  def self.top_rated
     videos = []
+    top_rated = Rating.popular_ratings
     7.times do
-      videos << Video.find_by_id(rand(2..50))
+      videos << top_rated.sample.video
     end
     videos
   end
 
-  def average_score
+  def avg_score
     scores = self.ratings
     total = 0
     scores.each do |score_card|

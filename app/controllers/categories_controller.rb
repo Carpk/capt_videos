@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
   def index
-    @tags = Tag.tag_names
+    @tags = Tag.all.order(:name)
   end
 
   def show

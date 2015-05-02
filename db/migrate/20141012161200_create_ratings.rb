@@ -4,6 +4,7 @@ class CreateRatings < ActiveRecord::Migration
       t.references :user
       t.references :video
       t.integer  :score
+
       t.timestamps
     end
   end

@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
   def index
-    @groups = Group.group_names
+    @groups = Group.all.order(:name)
   end
 end

@@ -1,11 +1,13 @@
 <div class="container">
-  <div>
-    <% @tags.each_slice(4) do |tag_slice| %>
-      <div class="row">
-        <% tag_slice.each do |name| %>
-          <div class="col-sm-3"><%=link_to name, category_path(name)%></div>
-        <% end %>
-      </div>
-    <% end %>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <% @tags.each do |tag| %>
+        <center>
+          <div class="pull-left listing-box"><%=link_to tag.name, category_path(tag.name)%></div>
+        </center>
+      <% end %>
+    </div>
+    <div class="col-sm-1"></div>
   </div>
 </div>
