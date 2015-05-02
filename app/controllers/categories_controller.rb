@@ -1,11 +1,11 @@
 class CategoriesController < ApplicationController
 
   def index
-    @tags = Tag.tag_names.sort
+    @tags = Tag.tag_names
   end
 
   def show
-    tag = params[:id]
-    @tagged_vids = Tag.where(tag: tag)
+    tag_name = params[:id]
+    @tag = Tag.find_by_name(tag_name)
   end
 end

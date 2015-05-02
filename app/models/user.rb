@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  before_save :check_name
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates :username, presence: true, uniqueness: true, length:{ maximum: 24 }
@@ -13,4 +15,8 @@ class User < ActiveRecord::Base
   has_many :ratings
   has_many :comments
   has_many :groups
+
+  def check_name
+    self.username.gsub!(/[.]/, '_')
+  end
 end

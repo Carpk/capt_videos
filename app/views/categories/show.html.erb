@@ -1,11 +1,11 @@
 <div class="container">
-  <h2><%= @tagged_vids.last.tag%></h2>
-  <%@tagged_vids.each_slice(6) do |tagged_slice|%>
+  <h2><%= @tag.name%></h2>
+  <%@tag.videos.each_slice(6) do |videos_slice|%>
     <div class="row">
-      <% tagged_slice.each do |tagged_vid| %>
+      <% videos_slice.each do |video| %>
         <div class="col-sm-2">
-          <%= link_to(image_tag(tagged_vid.video.image, :size=>"160x94", :class=>"img-rounded"), video_path(tagged_vid.video.id)) %>
-          <%= link_to tagged_vid.video.title, video_path(tagged_vid.video.id) %>
+          <%= link_to(image_tag(video.image, :size=>"160x94", :class=>"img-rounded"), video_path(video.id)) %>
+          <%= link_to video.title, video_path(video.id) %>
         </div>
       <% end %>
     </div>

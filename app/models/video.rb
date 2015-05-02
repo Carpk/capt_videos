@@ -2,13 +2,13 @@ class Video < ActiveRecord::Base
   # mount_uploader :video_url, VideoUploader
   after_create  :create_rating
 
+  has_and_belongs_to_many :tags, :join_table => "videos_tags"
+  has_and_belongs_to_many :groups, :join_table => "videos_groups"
   belongs_to :user
-  belongs_to :tag
   has_many :comments
   has_many :ratings
-  has_many :tags
 
-  accepts_nested_attributes_for :tag
+  accepts_nested_attributes_for :tags
 
   def create_rating
     Rating.create(user_id: self.user_id,
@@ -43,13 +43,15 @@ class Video < ActiveRecord::Base
     (total * 10) / scores.length
   end
 
-  def matching_tag
-    tags = self.tags
-    tagged_samples = []
-    tags.each do |tagged|
-      tagged_samples << tagged.sample_set
+  def similar_videos
+    videos = []
+    sample_set = []
+
+    6.times do
+      sample_set << self.tags.sample.videos.sample
     end
-    tagged_samples.flatten
+
+    sample_set
   end
 
 end

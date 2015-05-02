@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229012021) do
+ActiveRecord::Schema.define(version: 20150501174759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20141229012021) do
     t.integer  "user_id"
     t.integer  "video_id"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", force: true do |t|
+    t.integer  "user_id"
+    t.boolean  "private",     default: false
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -54,13 +63,12 @@ ActiveRecord::Schema.define(version: 20141229012021) do
   end
 
   create_table "tags", force: true do |t|
-    t.integer  "video_id"
-    t.string   "tag"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "tags", ["tag"], name: "index_tags_on_tag", using: :btree
+  add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"
@@ -92,6 +100,16 @@ ActiveRecord::Schema.define(version: 20141229012021) do
     t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "videos_groups", force: true do |t|
+    t.integer "video_id"
+    t.integer "group_id"
+  end
+
+  create_table "videos_tags", force: true do |t|
+    t.integer "video_id"
+    t.integer "tag_id"
   end
 
 end

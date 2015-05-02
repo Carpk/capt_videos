@@ -35,7 +35,8 @@ Video.create(user_id: user_one.id,
              image: 'https://s3-us-west-2.amazonaws.com/captinvideos/Becoming_A_Legend.jpg',
              video_url: 'f218a4ec-831b-465d-8949-71322079f06c/John%2BDreamer%2B-%2BBecoming%2BA%2BLegend%2B(Epic%2BDramatic%2BUplifting)%2B(HD).mp4')
 
-10.times do
+
+50.times do
     User.create(username: Faker::Internet.user_name,
                 email: Faker::Internet.email,
                 birthdate: "Mon, 25 Mar 1968",
@@ -44,36 +45,60 @@ Video.create(user_id: user_one.id,
                 password_confirmation: "password")
 end
 
+
+group_array = ["Garmin radar", "Viking", "Furuno transducers", "Sunseeker", "Hampton", "Sea Ray",
+                "Azimut", "Ocean Alexander"]
+groups_set = []
+group_array.each do |group|
+  groups_set << Group.create(user_id: rand(1..50),
+               name: group,
+               description: Faker::Lorem.sentence)
+end
+
+
+tag_array = ["Transducer", "GPS", "Fiberglass", "Tuna", "Bait", "Rig",
+             "Outboard", "Dolphin", "Teak", "VHF", "GPS", "AIS", "Bass",
+             "fishing", "fish finder", "reel", "trawler", "center console",
+             "radar", "radio", "outbaord"]
+tags_set = []
+tag_array.each do |tag|
+  tags_set << Tag.create(name: tag)
+end
+
+
 image_array = ["http://i.imgur.com/mWUOPTB.jpg", "http://i.imgur.com/CCajhN9.jpg",
                "http://i.imgur.com/XNYn1kP.jpg", "http://i.imgur.com/cWLmX1g.jpg",
                "http://i.imgur.com/gIT6SeI.jpg", "http://i.imgur.com/7OZgr7X.jpg",
                "http://i.imgur.com/XaVQo09.jpg", "http://i.imgur.com/o2DwNtR.jpg",
                "http://i.imgur.com/BFOeIuk.jpg", "http://i.imgur.com/k7vw9vj.jpg"]
 
-tag_array = ["Transducer", "GPS", "Fiberglass", "Tuna", "Bait", "Rig", "Outboard", "Dolphin"]
-
-50.times do
-    video = Video.create(user_id: rand(2..9),
-             title: Faker::Company.catch_phrase,
-             image: image_array.sample,
-             video_url: 'f218a4ec-831b-465d-8949-71322079f06c/John%2BDreamer%2B-%2BBecoming%2BA%2BLegend%2B(Epic%2BDramatic%2BUplifting)%2B(HD).mp4')
-    Tag.create(video_id: video.id, tag: tag_array.sample)
+150.times do
+  video = Video.create(user_id: rand(1..50),
+           title: Faker::Company.catch_phrase,
+           image: image_array.sample,
+           video_url: 'f218a4ec-831b-465d-8949-71322079f06c/John%2BDreamer%2B-%2BBecoming%2BA%2BLegend%2B(Epic%2BDramatic%2BUplifting)%2B(HD).mp4')
+  rand(2..4).times do
+    video.tags << tags_set.sample
+  end
+  rand(1..2).times do
+    video.groups << groups_set.sample
+  end
 end
 
-175.times do
-    Rating.create(user_id: rand(2..9),
-                video_id: rand(1..54),
-                score: rand(1..5))
+350.times do
+    Rating.create(user_id: rand(1..50),
+                video_id: rand(1..150),
+                score: rand(2..5))
 end
 
-175.times do
-    Comment.create(user_id: rand(1..9),
-                   video_id: rand(1..54),
+200.times do
+    Comment.create(user_id: rand(1..50),
+                   video_id: rand(1..150),
                    body: Faker::Lorem.paragraph)
 end
 
 50.times do
-    Message.create(sender_id: rand(1..9),
-                    recipient_id: rand(1..9),
+    Message.create(sender_id: rand(1..50),
+                    recipient_id: rand(1..50),
                     body: Faker::Lorem.paragraph)
 end

@@ -7,7 +7,7 @@
 
       <h3><%= @video.title %></h3>
       <img class="img-rounded" width="80" height="47" src=<%= @video.user.avatar %> >
-      <%= @video.user.username %><br>
+      <%= link_to @video.user.username, community_path(@video.user.username) %><br>
       <%= @video.created_at %>
       <div class="pull-right">
         <progress value=<%= @video.avg_score %> max="50"></progress>
@@ -44,10 +44,10 @@
 <div class="container">
   <h2>Similar videos</h2>
   <div class="row">
-    <% @video.matching_tag.each do |similar_video| %>
+    <% @video.similar_videos.each do |video| %>
       <div class="col-sm-2">
-        <%= link_to(image_tag(similar_video.image, :size=>"160x94", :class=>"img-rounded"), video_path(similar_video.id)) %>
-        <%= link_to similar_video.title, video_path(similar_video.id) %>
+        <%= link_to(image_tag(video.image, :size=>"160x94", :class=>"img-rounded"), video_path(video.id)) %>
+        <%= link_to video.title, video_path(video.id) %>
       </div>
     <%end%>
   </div>
