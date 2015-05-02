@@ -25,13 +25,12 @@ class Video < ActiveRecord::Base
     sample_set
   end
 
-  def self.top_rated
-    rated_vids = []
-    pack = Rating.popular_ratings
+  def self.random_video
+    videos = []
     7.times do
-      rated_vids << pack.sample.video
+      videos << Video.find_by_id(rand(2..50))
     end
-    rated_vids
+    videos
   end
 
   def average_score

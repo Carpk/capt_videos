@@ -3,7 +3,7 @@
     <% @groups.each_slice(4) do |group_slice| %>
       <div class="row">
         <% group_slice.each do |name| %>
-          <div class="col-sm-3"><%=link_to name, category_path(name)%></div>
+          <div class="col-sm-3"><%=link_to name, group_path(name)%></div>
         <% end %>
       </div>
     <% end %>
