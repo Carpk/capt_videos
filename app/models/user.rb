@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   has_many :ratings
   has_many :comments
   has_many :groups
+  has_many :sent_messages, :class_name => 'Message', :foreign_key => :sender_id
+  has_many :messages, :class_name => 'Message', :foreign_key => :recipient_id
+
 
   def check_name
     self.username.gsub!(/[.]/, '_')

@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  # mount_uploader :video_url, VideoUploader
+  mount_uploader :video_url, VideoUploader
   after_create  :create_rating
 
   has_and_belongs_to_many :tags, :join_table => "videos_tags"
@@ -8,7 +8,7 @@ class Video < ActiveRecord::Base
   has_many :comments
   has_many :ratings
 
-  accepts_nested_attributes_for :tags
+  accepts_nested_attributes_for :tags, :groups
 
   def create_rating
     Rating.create(user_id: self.user_id,
@@ -44,11 +44,21 @@ class Video < ActiveRecord::Base
   end
 
   def similar_videos
-    videos = []
+    retrieve_similar(6)
+  end
+
+  def sm_set
+    retrieve_similar(3)
+  end
+
+  private
+
+  def retrieve_similar(amount)
+    all_tags = self.tags
     sample_set = []
 
-    6.times do
-      sample_set << self.tags.sample.videos.sample
+    amount.times do
+      sample_set << all_tags.sample.videos.sample
     end
 
     sample_set

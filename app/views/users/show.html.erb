@@ -2,9 +2,9 @@
   <h3><%= @user.username.capitalize %>'s Dashbord</h3>
   <div class="row">
     <div class="col-sm-7">
-      Member since:
-      Number of uploads:
-      top tags:
+      Member since: <%=@user.created_at%><br>
+      Number of uploads: <%=@user.videos.count%><br>
+      top tags: <br>
     </div>
     <div class="col-sm-5 ">
 
@@ -31,4 +31,18 @@
   </div>
 </div>
 
-Implement message system
+<div class="container">
+  <h2>Messages</h2>
+  <div class="">
+    <% @user.messages.each do |comment| %>
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+        <h4><%=link_to comment.sender.username, community_path(comment.sender.username)%></h4><br>
+        <%=comment.body%>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+    <% end %>
+  </div>
+</div>

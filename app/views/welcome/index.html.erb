@@ -6,13 +6,24 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-9">
-      <div class="">
+    <div class="col-sm-8 video-spacer">
+    <h3>Recently popular</h3>
+      <div>
         <%= video_player({:file => @vid_of_day.video_url.to_s}, {:width => 768, :height => 432}) %>
       </div>
     </div>
-    <div class="col-sm-3">
-      <!-- similar tagged videos go here -->
+    <div class="col-sm-4">
+    <h3>Similar</h3>
+      <%@vid_of_day.sm_set.each do |video|%>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            <%= link_to(image_tag(video.image, :size=>"160x94", :class=>"img-rounded"), video_path(video.id)) %>
+            <%= link_to video.title, video_path(video.id) %>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+      <%end%>
     </div>
   </div>
 </div>

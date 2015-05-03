@@ -20,4 +20,7 @@ class Tag < ActiveRecord::Base
     tag_names.sort
   end
 
+  def self.parse_tags(tags)
+    tag_array = tags.split(",")
+  end
 end
