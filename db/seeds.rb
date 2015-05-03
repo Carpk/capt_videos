@@ -36,7 +36,7 @@ Video.create(user_id: user_one.id,
              video_url: 'f218a4ec-831b-465d-8949-71322079f06c/John%2BDreamer%2B-%2BBecoming%2BA%2BLegend%2B(Epic%2BDramatic%2BUplifting)%2B(HD).mp4')
 
 
-50.times do
+65.times do
     User.create(username: Faker::Internet.user_name,
                 email: Faker::Internet.email,
                 birthdate: "Mon, 25 Mar 1968",

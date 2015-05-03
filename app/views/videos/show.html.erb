@@ -16,12 +16,6 @@
 
     <div class="col-sm-3">
       <div class="row">
-        <% @video.comments.each do |comment| %>
-          <div>
-            <h4><%= comment.user.username %></h4>
-            <p><%= comment.body %><p>
-          </div>
-        <% end %>
       </div>
     </div>
 
@@ -50,5 +44,21 @@
         <%= link_to video.title, video_path(video.id) %>
       </div>
     <%end%>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Comments</h2>
+  <div class="">
+    <% @video.comments.each do |comment| %>
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+        <h4><%=link_to comment.user.username, community_path(comment.user.username)%></h4><br>
+        <%=comment.body%>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+    <% end %>
   </div>
 </div>
