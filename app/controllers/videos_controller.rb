@@ -7,7 +7,6 @@ class VideosController < ApplicationController
   end
 
   def create
-    # Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZvlYhkiYVryXG6kf6jdNtcSqZ1Y5QXwBa3C68QbnVoU=", "video"=>{"title"=>"new title", "key"=>"uploads/video/video_url/62e7c560-9f43-4fa3-9930-b8467ebc6770/Sonic Librarian - Firefly Mist.mp4", "tag"=>{"name"=>"food, money"}}, "commit"=>"Create Video"}
     user_id = session["warden.user.user.key"][0][0]
     params[:video][:user_id] = user_id
 
@@ -19,7 +18,7 @@ class VideosController < ApplicationController
         new_video.tags << tag_obj
     end
 
-    #create groups
+    #group_array = Group.parse_groups(params[:video][:group], user_id)
 
     redirect_to user_path(user_id)
   end

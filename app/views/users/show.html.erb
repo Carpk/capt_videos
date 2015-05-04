@@ -11,7 +11,7 @@
       <%= direct_upload_form_for @uploader do |f| %>
         <%= f.label :select_video%>
         <%= f.file_field :video_url %><br>
-        <%= f.submit "Upload" %>
+        <%= f.submit "Upload", :class => 'btw' %>
       <% end %>
 
     </div>
