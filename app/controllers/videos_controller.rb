@@ -11,15 +11,16 @@ class VideosController < ApplicationController
     user_id = session["warden.user.user.key"][0][0]
     params[:video][:user_id] = user_id
 
-    video = Video.create(video_params)
+    new_video = Video.create(video_params)
 
     tag_array = Tag.parse_tags(params[:video][:tag][:name])
 
-    tag_array.each do |tag|
-      Tag.create(tag.strip)
+    tag_array.each do |tag_obj|
+        new_video.tags << tag_obj
     end
 
     #create groups
+
     redirect_to user_path(user_id)
   end
 
