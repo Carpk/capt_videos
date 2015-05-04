@@ -4,12 +4,14 @@
 
     <%= form_for @video do |f| %>
       select which cover icons /gifs to use<br/>
-      <%= f.label :title %>:
+      <%= f.label :title %>:<br>
       <%= f.text_field :title %><br/>
       <%= f.hidden_field :key %>
 
       <%= f.fields_for @tag do |builder| %>
-        <%= builder.label :tags %>
+
+        <%= builder.label :tag_words %>:<br>
+        tag words must be sparated by a comma(,)<br>
         <%= builder.text_field :name %>
       <% end %><br/>
 
