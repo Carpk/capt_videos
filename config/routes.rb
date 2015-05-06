@@ -28,6 +28,7 @@ CaptVideos::Application.routes.draw do
     resources :community, only: [:index, :show]
     resources :categories, only: [:index, :show]
     resources :messages, only: [:create]
+    resources :comments, only: [:create]
 
     # resources :sessions,      only: [:new, :create, :destroy]
 

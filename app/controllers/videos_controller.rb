@@ -20,7 +20,7 @@ class VideosController < ApplicationController
 
     #group_array = Group.parse_groups(params[:video][:group], user_id)
 
-    redirect_to user_path(user_id)
+    redirect_to user_path(user_id), :notice => "Your video has been created"
   end
 
   def edit

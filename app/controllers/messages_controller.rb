@@ -6,9 +6,9 @@ class MessagesController < ApplicationController
       params[:message][:sender_id] = user_id
       Message.create(message_params)
 
-      redirect_to user_path(user_id)
+      redirect_to user_path(user_id), :notice => "Your message has been sent"
     else
-      redirect_to new_user_registration_path, :notice => "You must be logged in to do that"
+      redirect_to new_user_registration_path, :alert => "You must be logged in to do that"
     end
   end
 
