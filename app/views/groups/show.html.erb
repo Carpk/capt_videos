@@ -7,7 +7,7 @@
     <div class="row">
       <% videos_slice.each do |video| %>
         <div class="col-sm-2">
-          <%= link_to(image_tag(video.image, :size=>"160x94", :class=>"img-rounded"), video_path(video.id)) %>
+          <%= link_to(image_tag(video.video_url.thumb, :size=>"160x94", :class=>"img-rounded"), video_path(video.id)) %>
           <%= link_to video.title, video_path(video.id) %>
         </div>
       <% end %>

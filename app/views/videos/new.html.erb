@@ -11,7 +11,7 @@
       <%= f.fields_for @tag do |builder| %>
 
         <%= builder.label :tag_words %>:<br>
-        <small>tag words are required and must be sparated by a comma(,)</small><br>
+        <span class='text-muted small'>tag words are required and must be sparated by a comma(,)</span><br>
         <%= builder.text_field :name %>
       <% end %><br/>
 

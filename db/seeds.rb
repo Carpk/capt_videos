@@ -15,25 +15,30 @@ user_one = User.create(username: "admin",
                         avatar: "https://s3-us-west-2.amazonaws.com/captinvideos/Becoming_A_Legend.jpg",
                         password_confirmation: "password")
 
+random_videos = ["2073ca3d-fd70-4ff5-ae67-b85704faba23/Lux%2BAeterna%2BBy%2BClint%2BMansell.mp4",
+                 "36a629e4-3494-466b-9ae5-61244cfad4bb/Two%2BSteps%2BFrom%2BHell%2B-%2BBlackheart%2B(Thomas%2BBergersen%2B-%2BEpic%2BDark%2BMelancholic%2BDramatic).mp4",
+                 "4f422530-8510-4f6d-b715-a4198ea7379f/Sonic+Librarian+-+Firefly+Mist.mp4",
+                 "9aa88a56-f9c8-4c61-b136-3398ffa28f5d/Kawai+Kenji+-+Kishi+Ou+no+Hokori+l+Ns+Music.mp4",
+                 "af02ec9c-6078-4571-9d99-94580d6f603b/Twisted+Jukebox+-+Angels+Will+Rise.mp4",
+                 "deb085ac-605a-49ea-8621-457acc2c0ea8/clubbed%2Bto%2Bdeath%2B-%2BMatrix%2Bsoundtrack.mp4",
+                 "f218a4ec-831b-465d-8949-71322079f06c/John%2BDreamer%2B-%2BBecoming%2BA%2BLegend%2B(Epic%2BDramatic%2BUplifting)%2B(HD).mp4"]
+
+
 Video.create(user_id: user_one.id,
              title: 'matrix_reloaded',
-             image: 'https://s3-us-west-2.amazonaws.com/captinvideos/MATRIX.jpg',
-             video_url: 'deb085ac-605a-49ea-8621-457acc2c0ea8/clubbed%2Bto%2Bdeath%2B-%2BMatrix%2Bsoundtrack.mp4')
+             video_url: random_videos.sample)
 
 Video.create(user_id: user_one.id,
              title: 'Lux_Aeterna',
-             image: 'https://s3-us-west-2.amazonaws.com/captinvideos/Lux_Aeterna.jpg',
-             video_url: '2073ca3d-fd70-4ff5-ae67-b85704faba23/Lux%2BAeterna%2BBy%2BClint%2BMansell.mp4')
+             video_url: random_videos.sample)
 
 Video.create(user_id: user_one.id,
              title: 'Blackheart',
-             image: 'https://s3-us-west-2.amazonaws.com/captinvideos/Blackheart2012.jpg',
-             video_url: '36a629e4-3494-466b-9ae5-61244cfad4bb/Two%2BSteps%2BFrom%2BHell%2B-%2BBlackheart%2B(Thomas%2BBergersen%2B-%2BEpic%2BDark%2BMelancholic%2BDramatic).mp4')
+             video_url: random_videos.sample)
 
 Video.create(user_id: user_one.id,
              title: 'Becoming_A_Legend',
-             image: 'https://s3-us-west-2.amazonaws.com/captinvideos/Becoming_A_Legend.jpg',
-             video_url: 'f218a4ec-831b-465d-8949-71322079f06c/John%2BDreamer%2B-%2BBecoming%2BA%2BLegend%2B(Epic%2BDramatic%2BUplifting)%2B(HD).mp4')
+             video_url: random_videos.sample)
 
 
 65.times do
@@ -66,17 +71,11 @@ tag_array.each do |tag|
 end
 
 
-image_array = ["http://i.imgur.com/mWUOPTB.jpg", "http://i.imgur.com/CCajhN9.jpg",
-               "http://i.imgur.com/XNYn1kP.jpg", "http://i.imgur.com/cWLmX1g.jpg",
-               "http://i.imgur.com/gIT6SeI.jpg", "http://i.imgur.com/7OZgr7X.jpg",
-               "http://i.imgur.com/XaVQo09.jpg", "http://i.imgur.com/o2DwNtR.jpg",
-               "http://i.imgur.com/BFOeIuk.jpg", "http://i.imgur.com/k7vw9vj.jpg"]
 
 150.times do
   video = Video.create(user_id: rand(1..50),
            title: Faker::Company.catch_phrase,
-           image: image_array.sample,
-           video_url: 'f218a4ec-831b-465d-8949-71322079f06c/John%2BDreamer%2B-%2BBecoming%2BA%2BLegend%2B(Epic%2BDramatic%2BUplifting)%2B(HD).mp4')
+           video_url: random_videos.sample)
   rand(2..4).times do
     video.tags << tags_set.sample
   end

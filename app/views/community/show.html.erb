@@ -12,7 +12,7 @@
   <div class="row">
     <% @user_profile.videos.each do |vid| %>
       <div class="col-sm-2 pull-left">
-        <%= link_to(image_tag(vid.image, :size=>"160x94", :class=>"img-rounded"), video_path(vid.id)) %>
+        <%= link_to(image_tag(vid.video_url.thumb, :size=>"160x94", :class=>"img-rounded"), video_path(vid.id)) %>
         <%= link_to vid.title, video_path(vid.id)%>
       </div>
     <% end %>

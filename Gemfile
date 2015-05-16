@@ -11,6 +11,7 @@ gem 'pg'
 
 # Support for AWS S3
 gem 'carrierwave_direct'
+gem 'carrierwave-video-thumbnailer'
 gem 'fog', '~> 1.3.1'
 
 # Use for managing user accounts

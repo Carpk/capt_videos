@@ -96,20 +96,23 @@ ActiveRecord::Schema.define(version: 20150501174759) do
   create_table "videos", force: true do |t|
     t.integer  "user_id"
     t.string   "title"
-    t.string   "image"
     t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "videos_groups", force: true do |t|
-    t.integer "video_id"
-    t.integer "group_id"
+    t.integer  "video_id"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "videos_tags", force: true do |t|
-    t.integer "video_id"
-    t.integer "tag_id"
+    t.integer  "video_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
