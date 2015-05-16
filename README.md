@@ -1,8 +1,6 @@
 # Capt'n Videos
 
-A nautical youtube clone that allows members to post thier favorite maritime videos to share with the rest of the community.
-
-##
+A nautical youtube clone that allows members to post thier favorite maritime videos to share with the rest of the community. It has been deployed to [heroku](http://captinvideos.herokuapp.com/).
 
 Capt'n Videos used AWS s3 service, Carrierwave Direct, Fog, JW Player, Ruby 2.1.1p76, Rails 4.0.4, Bootstrap, Devise, PostgreSQL
 
@@ -20,12 +18,16 @@ Seeding note: To seed db, you must comment out 'mount_uploader :video_url, Video
 
 ## Screenshots
 
-While this site is currently a work in progress, it has been deployed to [heroku](http://captinvideos.herokuapp.com/). Although, the screenshots may be a better representation of the applications current state.
+While the site is live on [heroku](http://captinvideos.herokuapp.com/), these are some additional screenshots.
 
-![landing page](https://raw.githubusercontent.com/Carpk/capt_videos/master/app/assets/images/landing_page.png)
+![landing page](https://raw.githubusercontent.com/Carpk/capt_videos/master/app/assets/images/signed-in.png)
 
-The Landing page, video player will probably be removed.
+After sign in.
 
-![video page](https://raw.githubusercontent.com/Carpk/capt_videos/master/app/assets/images/video_page.png)
+![video page](https://raw.githubusercontent.com/Carpk/capt_videos/master/app/assets/images/upload.png)
 
-Video page, shows uploader and additional videos from uploader. Also videos with matching tags.
+Would like to give more options here, maybe in v2.
+
+![video page](https://raw.githubusercontent.com/Carpk/capt_videos/master/app/assets/images/upload-created.png)
+
+After saved to db, user is directed to their dashboard.
