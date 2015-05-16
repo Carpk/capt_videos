@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  mount_uploader :video_url, VideoUploader
+  # mount_uploader :video_url, VideoUploader
   after_create  :create_rating
 
   has_and_belongs_to_many :tags, :join_table => "videos_tags"
