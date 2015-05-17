@@ -9,8 +9,9 @@
     <div class="col-sm-8 video-spacer">
     <h3>Recently popular</h3>
       <div>
-        <%= video_player({:file => @vid_of_day.video_url.to_s}, {:width => 768, :height => 432}) %>
+        <%= video_player({:file => @vid_of_day.video_url.to_s, :image => @vid_of_day.video_url.thumb.to_s}, {:width => 768, :height => 432}) %>
       </div>
+      <%=@vid_of_day.video_url.thumb.to_s%>
     </div>
     <div class="col-sm-4">
     <h3>Similar</h3>

@@ -23,23 +23,29 @@ random_videos = ["2073ca3d-fd70-4ff5-ae67-b85704faba23/Lux%2BAeterna%2BBy%2BClin
                  "deb085ac-605a-49ea-8621-457acc2c0ea8/clubbed%2Bto%2Bdeath%2B-%2BMatrix%2Bsoundtrack.mp4",
                  "f218a4ec-831b-465d-8949-71322079f06c/John%2BDreamer%2B-%2BBecoming%2BA%2BLegend%2B(Epic%2BDramatic%2BUplifting)%2B(HD).mp4"]
 
+admin_vids = []
 
-Video.create(user_id: user_one.id,
-             title: 'matrix_reloaded',
-             video_url: random_videos.sample)
+admin_vids << Video.create(user_id: user_one.id,
+                           title: 'matrix_reloaded',
+                           video_url: random_videos[5])
 
-Video.create(user_id: user_one.id,
-             title: 'Lux_Aeterna',
-             video_url: random_videos.sample)
+admin_vids << Video.create(user_id: user_one.id,
+                           title: 'Lux_Aeterna',
+                           video_url: random_videos[0])
 
-Video.create(user_id: user_one.id,
-             title: 'Blackheart',
-             video_url: random_videos.sample)
+admin_vids << Video.create(user_id: user_one.id,
+                           title: 'Blackheart',
+                           video_url: random_videos[1])
 
-Video.create(user_id: user_one.id,
-             title: 'Becoming_A_Legend',
-             video_url: random_videos.sample)
+admin_vids << Video.create(user_id: user_one.id,
+                           title: 'Becoming_A_Legend',
+                           video_url: random_videos[6])
 
+tag = Tag.create(name: "Epic")
+
+admin_vids.each do |vid|
+  vid.tags << tag
+end
 
 65.times do
     User.create(username: Faker::Internet.user_name,
