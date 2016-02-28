@@ -11,33 +11,23 @@ class Video < ActiveRecord::Base
   accepts_nested_attributes_for :tags, :groups
 
   def create_rating
-    Rating.create(user_id: self.user_id,
-                  video_id: self.id,
-                  score: 3)
+    Rating.create(user_id: self.user_id, video_id: self.id, score: 3)
   end
 
   def user_collection
-    sample_set = []
-    user_videos = self.user.videos
-    6.times do
-      sample_set << user_videos.sample
-    end
-    sample_set
+    self.user.videos.sample(6)
   end
 
   def self.top_rated
-    videos = []
-    top_rated = Rating.popular_ratings
-    7.times do
-      videos << top_rated.sample.video
-    end
-    videos
+    Rating.popular_ratings.sample(7).map {|r| r.video}
   end
 
   def avg_score
     scores = self.ratings
+
     num_of_reviews = scores.length
     total = scores.map{|s| s.score}.reduce(:+)
+
     (total * 10) / num_of_reviews
   end
 
@@ -52,14 +42,7 @@ class Video < ActiveRecord::Base
   private
 
   def retrieve_similar(amount)
-    all_tags = self.tags
-    sample_set = []
-
-    amount.times do
-      sample_set << all_tags.sample.videos.sample
-    end
-
-    sample_set
+    self.tags.sample.videos.sample(amount)
   end
 
 end
