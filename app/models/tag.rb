@@ -6,19 +6,12 @@ class Tag < ActiveRecord::Base
   def sample_set
     tagged_samples = []
     matching_tags = Tag.where(tag: self.name)
-    6.times do
-      tagged_samples << matching_tags.sample.video
-    end
+    6.times { tagged_samples << matching_tags.sample.video }
     tagged_samples
   end
 
   def self.tag_names
-    tags = Tag.all
-    tag_names = []
-    tags.each do |tag|
-      tag_names << tag.name
-    end
-    tag_names.sort
+    Tag.all.map {|tag| tag.name}.sort
   end
 
   def self.parse_tags(tags)
@@ -29,11 +22,7 @@ class Tag < ActiveRecord::Base
 
     tag_array.each do |tag_word|
       tag_found = Tag.find_by_name(tag_word)
-      if tag_found
-        tag_obj << tag_found
-      else
-        tag_obj << Tag.create({name: tag_word})
-      end
+      tag_found ? tag_obj << tag_found : tag_obj << Tag.create({name: tag_word})
     end
     tag_obj
   end

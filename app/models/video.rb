@@ -36,11 +36,9 @@ class Video < ActiveRecord::Base
 
   def avg_score
     scores = self.ratings
-    total = 0
-    scores.each do |score_card|
-      total += score_card.score
-    end
-    (total * 10) / scores.length
+    num_of_reviews = scores.length
+    total = scores.map{|s| s.score}.reduce(:+)
+    (total * 10) / num_of_reviews
   end
 
   def similar_videos
