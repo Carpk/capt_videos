@@ -70,7 +70,7 @@ end
 tag_array = ["Transducer", "GPS", "Fiberglass", "Tuna", "Bait", "Rig",
              "Outboard", "Dolphin", "Teak", "VHF", "GPS", "AIS", "Bass",
              "fishing", "fish finder", "reel", "trawler", "center console",
-             "radar", "radio", "outbaord"]
+             "radar", "radio", "outboard"]
 tags_set = []
 tag_array.each do |tag|
   tags_set << Tag.create(name: tag)

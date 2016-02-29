@@ -4,8 +4,9 @@ describe Tag do
 
   let(:tag) {Tag.last}
 
-  it "should return a sample set" do
-    expect(tag.sample_set).to eq("something")
+  it "should parse a single tag" do
+    tags = 'Epic'
+    expect(Tag.parse_tags(tags).first.class).to eq(Tag)
   end
   
 end
