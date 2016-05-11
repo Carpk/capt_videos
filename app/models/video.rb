@@ -1,3 +1,5 @@
+require 'cgi'
+
 class Video < ActiveRecord::Base
   mount_uploader :video_url, VideoUploader
   after_create  :create_rating
@@ -36,6 +38,10 @@ class Video < ActiveRecord::Base
 
   def sm_set
     retrieve_similar(3)
+  end
+
+  def show_thumbnail
+    CGI.escape self.video_url.thumb.to_s
   end
 
   private
