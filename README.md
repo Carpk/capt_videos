@@ -1,6 +1,6 @@
 # Capt'n Videos
 
-A nautical youtube clone that allows members to post thier favorite maritime videos to share with the rest of the community. It has been deployed to [heroku](http://captvideos.herokuapp.com/).
+A nautical youtube clone that allows members to post thier favorite maritime videos to share with the rest of the community.
 
 Capt'n Videos used AWS s3 service, Carrierwave Direct, Fog, JW Player, Ruby 2.1.1p76, Rails 4.0.4, Bootstrap, Devise, PostgreSQL
 
